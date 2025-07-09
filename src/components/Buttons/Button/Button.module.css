@@ -1,0 +1,13 @@
+.primary {
+  background-color: var(--accent);
+  color: var(--background-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--corner-radius-round);
+  border: none;
+  padding: 0.5rem 1rem;
+}
+
+.primary:hover {
+  background-color: var(--hover);
+}
