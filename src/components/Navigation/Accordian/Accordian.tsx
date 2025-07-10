@@ -117,8 +117,8 @@ const AccordionHeader: React.FC<AccordionHeaderProps> = ({
   };
 
   return (
-    <div className={`accordion-header ${className}`}>
-      <button
+    <details className={`accordion-header ${className}`}>
+      <summary
         ref={buttonRef}
         id={buttonId}
         aria-expanded={isOpen}
@@ -128,11 +128,11 @@ const AccordionHeader: React.FC<AccordionHeaderProps> = ({
         data-accordion-header
         className={styles.header}
         // className="w-full text-left"
-        type="button"
+        //type="button"
       >
         {children}
-      </button>
-    </div>
+      </summary>
+    </details>
   );
 };
 

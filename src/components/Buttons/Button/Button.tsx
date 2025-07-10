@@ -10,14 +10,14 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
  *  Add secondary button
  *  Add disabled state
  *  Add loading state
+ *  Add optional class
  */
 export const Button: React.FC<ButtonProps> = ({
   children,
   ref,
-  variant = "primary",
+  // variant = "primary",
   ...props
 }) => {
-  console.log(variant);
   return (
     <button ref={ref} className={styles.primary} {...props}>
       {children}

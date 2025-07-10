@@ -4,12 +4,14 @@ import { Button } from "./components/Buttons/Button/Button";
 import { Tabs } from "./components/Navigation/Tabs/Tabs";
 import { Accordion } from "./components/Navigation/Accordian/Accordian";
 import { Modal } from "./components/Overlays/Modal/Modal";
+import { Combobox } from "./components/Pickers/Combobox/Combobox";
 
 function App() {
   // const [open, setOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const cancelRef = useRef<HTMLButtonElement>(null);
   const openRef = useRef<HTMLButtonElement>(null);
+  const items = ["Apple", "Banana", "Grape", "Orange", "Pineapple"];
 
   return (
     <>
@@ -81,6 +83,20 @@ function App() {
             </Modal.Footer>
           </Modal.Content>
         </Modal>
+
+        <h2>ComboBox</h2>
+        <div className="max-w-sm">
+          <label htmlFor="fruit" className="block mb-2">
+            Choose a fruit:
+          </label>
+          <Combobox
+            options={items}
+            onChange={(val) => console.log("Selected:", val)}
+          >
+            <Combobox.Input className="border p-2 w-full" />
+            <Combobox.Listbox className="border border-gray-300" />
+          </Combobox>
+        </div>
       </div>
     </>
   );
