@@ -21,7 +21,7 @@
 }
 
 .content {
-  background: white;
+  background: var(--background-surface);
   padding: 2rem;
   border-radius: 8px;
   max-width: 500px;
