@@ -18,19 +18,19 @@ const meta = {
   render: ({ ...args }) => (
     <Tabs defaultIndex={0} manual={false}>
       <Tabs.List className="flex gap-2 border-b">
-        <Tabs.Tab index={0}>Home</Tabs.Tab>
-        <Tabs.Tab index={1}>Profile</Tabs.Tab>
-        <Tabs.Tab index={2}>Settings</Tabs.Tab>
+        <Tabs.Tab index={0}>Overview</Tabs.Tab>
+        <Tabs.Tab index={1}>Billing</Tabs.Tab>
+        <Tabs.Tab index={2}>Security</Tabs.Tab>
       </Tabs.List>
 
       <Tabs.Panel index={0}>
-        <p>Welcome to the home tab.</p>
+        <p>Welcome to the Overview tab.</p>
       </Tabs.Panel>
       <Tabs.Panel index={1}>
-        <p>This is the profile tab.</p>
+        <p>This is the Billing tab.</p>
       </Tabs.Panel>
       <Tabs.Panel index={2}>
-        <p>Adjust your settings here.</p>
+        <p>Adjust your seccurity settings here.</p>
       </Tabs.Panel>
     </Tabs>
   ),
