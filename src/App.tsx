@@ -86,13 +86,12 @@ function App() {
 
         <h2>ComboBox</h2>
         <div className="max-w-sm">
-          <label htmlFor="fruit" className="block mb-2">
-            Choose a fruit:
-          </label>
           <Combobox
+            label="Choose a fruit:"
             options={items}
             onChange={(val) => console.log("Selected:", val)}
           >
+            <Combobox.Label />
             <Combobox.Input className="border p-2 w-full" />
             <Combobox.Listbox className="border border-gray-300" />
           </Combobox>

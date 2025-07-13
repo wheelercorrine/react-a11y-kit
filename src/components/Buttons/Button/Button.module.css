@@ -1,6 +1,6 @@
 .primary {
   background-color: var(--accent);
-  color: var(--text-primary);
+  color: var(--text-accent);
   font-size: 1rem;
   font-weight: 600;
   border-radius: var(--corner-radius-round);
@@ -10,4 +10,18 @@
 
 .primary:hover {
   background-color: var(--hover);
+}
+
+.secondary {
+  background-color: var(--background-surface);
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--corner-radius-round);
+  border: 2px solid var(--border);
+  padding: 0.5rem 1rem;
+}
+
+.secondary:hover {
+  background-color: var(--border);
 }

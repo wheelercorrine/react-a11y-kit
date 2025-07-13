@@ -10,7 +10,10 @@ type ButtonPropsAndCustomArgs = React.ComponentProps<typeof Button> & {
 const meta = {
   component: Button,
   argTypes: {
-    children: { control: "text" }, // Allows editing children content in Storybook controls
+    variant: {
+      control: "select",
+      options: ["primary", "secondary"],
+    },
   },
   parameters: {
     layout: "centered",
@@ -24,4 +27,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: { variant: "primary", text: "Click Me" },
+};
+
+export const Secondary: Story = {
+  args: { variant: "secondary", text: "Click Me" },
 };

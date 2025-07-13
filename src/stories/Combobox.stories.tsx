@@ -9,14 +9,16 @@ import { Combobox } from "../components/Pickers/Combobox/Combobox";
 
 const meta = {
   component: Combobox,
-  parameters: {
-    layout: "centered",
-  },
+  // parameters: {
+  //   layout: "centered",
+  // },
   render: ({ ...args }) => (
     <Combobox
+      label={args.label}
       options={args.options}
       onChange={(val) => console.log("Selected:", val)}
     >
+      <Combobox.Label />
       <Combobox.Input />
       <Combobox.Listbox />
     </Combobox>
@@ -28,5 +30,8 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-  args: { options: ["Apple", "Banana", "Grape", "Orange", "Pineapple"] },
+  args: {
+    label: "Choose a fruit:",
+    options: ["Apple", "Banana", "Grape", "Orange", "Pineapple"],
+  },
 };

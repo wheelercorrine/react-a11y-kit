@@ -11,12 +11,14 @@ import type { ReactNode, KeyboardEvent } from "react";
 import styles from "./Combobox.module.css";
 
 type ComboboxContextType = {
+  label: string;
   isOpen: boolean;
   setIsOpen: (i: boolean) => void;
   activeIndex: number | null;
   setActiveIndex: (i: number | null) => void;
   selectOption: (value: string) => void;
   inputRef: React.RefObject<HTMLInputElement | null>;
+  inputId: string;
   listboxId: string;
   options: string[];
   filteredOptions: string[];
@@ -34,6 +36,7 @@ function useComboboxContext() {
 }
 
 interface ComboboxRootProps {
+  label: string;
   options: string[];
   children: ReactNode;
   onChange?: (value: string) => void;
@@ -44,7 +47,8 @@ export const Combobox: React.FC<ComboboxRootProps> & {
   Input: typeof ComboboxInput;
   Listbox: typeof ComboboxListbox;
   Option: typeof ComboboxOption;
-} = ({ options, children, onChange }) => {
+  Label: typeof ComboboxLabel;
+} = ({ label, options, children, onChange }) => {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -52,6 +56,7 @@ export const Combobox: React.FC<ComboboxRootProps> & {
   const [selectedValue, setSelectedValue] = useState("");
 
   const listboxId = useId();
+  const inputId = useId();
 
   const selectOption = (value: string) => {
     setSelectedValue(value);
@@ -63,12 +68,14 @@ export const Combobox: React.FC<ComboboxRootProps> & {
   return (
     <ComboboxContext.Provider
       value={{
+        label,
         isOpen,
         setIsOpen,
         activeIndex,
         setActiveIndex,
         selectOption,
         inputRef,
+        inputId,
         listboxId,
         options,
         filteredOptions,
@@ -82,6 +89,16 @@ export const Combobox: React.FC<ComboboxRootProps> & {
   );
 };
 
+const ComboboxLabel: React.FC<{ className?: string }> = () => {
+  const { label, inputId } = useComboboxContext();
+
+  return (
+    <label htmlFor={inputId} className={styles.label}>
+      {label}
+    </label>
+  );
+};
+
 const ComboboxInput: React.FC<{ className?: string }> = () => {
   const {
     isOpen,
@@ -90,6 +107,7 @@ const ComboboxInput: React.FC<{ className?: string }> = () => {
     setActiveIndex,
     selectOption,
     inputRef,
+    inputId,
     listboxId,
     options,
     filteredOptions,
@@ -140,6 +158,7 @@ const ComboboxInput: React.FC<{ className?: string }> = () => {
 
   return (
     <input
+      id={inputId}
       ref={inputRef}
       className={styles.input}
       type="text"
@@ -210,6 +229,7 @@ const ComboboxOption: React.FC<{
 };
 
 // Attach subcomponents
+Combobox.Label = ComboboxLabel;
 Combobox.Input = ComboboxInput;
 Combobox.Listbox = ComboboxListbox;
 Combobox.Option = ComboboxOption;
