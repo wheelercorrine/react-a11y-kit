@@ -51,6 +51,6 @@
 .option:hover,
 .option[aria-selected="true"] {
   background-color: var(--hover); /* blue-600 */
-  color: var(--background-surface);
+  color: var(--text-accent);
   font-weight: 600;
 }

@@ -4,6 +4,7 @@ import React, {
   useContext,
   createContext,
   useId,
+  useEffect,
 } from "react";
 
 import type { ReactNode, KeyboardEvent } from "react";
@@ -54,6 +55,11 @@ export const Combobox: React.FC<ComboboxRootProps> & {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [filteredOptions, setFilteredOptions] = useState<string[]>(options);
   const [selectedValue, setSelectedValue] = useState("");
+
+  useEffect(() => {
+    const item = document.getElementById(`option-${listboxId}-${activeIndex}`);
+    item?.scrollIntoView();
+  }, [activeIndex]);
 
   const listboxId = useId();
   const inputId = useId();
