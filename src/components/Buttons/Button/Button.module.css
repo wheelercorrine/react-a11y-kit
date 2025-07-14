@@ -25,3 +25,31 @@
 .secondary:hover {
   background-color: var(--border);
 }
+
+.destructive {
+  background-color: var(--background-destructive);
+  color: var(--text-accent);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--corner-radius-round);
+  border: none;
+  padding: 0.5rem 1rem;
+}
+
+.destructive:hover {
+  background-color: var(--error);
+}
+
+.disabled {
+  background-color: var(--background-surface);
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--corner-radius-round);
+  border: 2px solid var(--border);
+  padding: 0.5rem 1rem;
+}
+
+.disabled:hover {
+  background-color: var(--background-surface);
+}

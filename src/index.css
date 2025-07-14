@@ -2,6 +2,7 @@
   /* Color palette */
   --background-primary: #f9fafb;
   --background-surface: #ffffff;
+  --background-destructive: #d23333;
   --text-primary: #1f2937;
   --text-secondary: #6b7280;
   --text-accent: #f9fafb;
@@ -43,6 +44,7 @@
   :root {
     --background-primary: #1c1c1e;
     --background-surface: #2a2a2e;
+    --background-destructive: #b31010;
     --text-primary: #f4f4f5;
     --text-secondary: #a1a1aa;
     --text-accent: #f4f4f5;

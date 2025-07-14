@@ -12,7 +12,7 @@ const meta = {
   argTypes: {
     variant: {
       control: "select",
-      options: ["primary", "secondary"],
+      options: ["primary", "secondary", "destructive", "disabled"],
     },
   },
   parameters: {
@@ -26,9 +26,17 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-  args: { variant: "primary", text: "Click Me" },
+  args: { variant: "primary", text: "Submit" },
 };
 
 export const Secondary: Story = {
-  args: { variant: "secondary", text: "Click Me" },
+  args: { variant: "secondary", text: "Close" },
+};
+
+export const Destructive: Story = {
+  args: { variant: "destructive", text: "Delete Profile" },
+};
+
+export const disabled: Story = {
+  args: { variant: "disabled", text: "Submit" },
 };
