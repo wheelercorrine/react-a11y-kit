@@ -1,0 +1,64 @@
+import {
+  Canvas,
+  Meta,
+  Description,
+  ArgTypes,
+} from "@storybook/addon-docs/blocks";
+
+import * as ButtonStories from "./Button.stories";
+
+<Meta of={ButtonStories} />
+
+# Button
+
+The `Button` component is a reusable, accessible base button used throughout the component library. It supports multiple visual variants and offers flexible customization through both CSS variables and `className` overrides.
+
+<Canvas of={ButtonStories.Primary} />
+
+## Description
+
+The `Button` is fully keyboard accessible, screen reader friendly, and styled to meet WCAG AA+ contrast guidelines.
+
+It supports the following variants:
+
+- **Primary** — Default button style for main actions.
+- **Secondary** — Used for lower-emphasis actions.
+- **Destructive** — Indicates potentially dangerous or irreversible actions.
+- **Disabled** — Prevents interaction and is visually distinct.
+
+Styling can be customized in two ways:
+
+- Override styles using a custom `className`.
+- Update design tokens via CSS variables.
+
+A loading state is not currently implemented but is planned.
+
+---
+
+## 💡 Usage
+
+<Canvas of={ButtonStories.Secondary} />
+
+---
+
+## ⚙️ Props
+
+<ArgTypes of={ButtonStories} />
+
+---
+
+## 🎨 Customization
+
+You can easily customize the button’s appearance using CSS variables.
+
+### Example variables:
+
+```css
+--background-primary: #f9fafb;
+--background-surface: #ffffff;
+--background-destructive: #d23333;
+--text-primary: #1f2937;
+--text-secondary: #6b7280;
+--text-accent: #f9fafb;
+--corner-radius-round: 50px;
+```

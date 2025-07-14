@@ -12,6 +12,7 @@ const meta = {
   argTypes: {
     variant: {
       control: "select",
+      description: "Standard button variants",
       options: ["primary", "secondary", "destructive", "disabled"],
     },
   },
