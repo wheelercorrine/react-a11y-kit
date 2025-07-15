@@ -10,6 +10,7 @@ const meta = {
   // parameters: {
   //   layout: "centered",
   // },
+  tags: ["autodocs"],
   render: ({ ...args }) => (
     <Accordion allowMultiple>
       <Accordion.Item index={0}>

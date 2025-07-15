@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useRef } from "react";
 
-import type { ReactNode, KeyboardEvent } from "react";
+import type { ReactNode } from "react";
 
 import styles from "./Accordian.module.css";
 
@@ -89,33 +89,6 @@ const AccordionHeader: React.FC<AccordionHeaderProps> = ({
   const buttonId = `accordion-header-${index}`;
   const panelId = `accordion-panel-${index}`;
 
-  const handleKeyDown = (e: KeyboardEvent<HTMLButtonElement>) => {
-    const headers = document.querySelectorAll<HTMLButtonElement>(
-      '[role="button"][data-accordion-header]'
-    );
-    const currentIndex = Array.from(headers).findIndex(
-      (el) => el === buttonRef.current
-    );
-
-    let newIndex = currentIndex;
-
-    if (e.key === "ArrowDown") newIndex = (currentIndex + 1) % headers.length;
-    if (e.key === "ArrowUp")
-      newIndex = (currentIndex - 1 + headers.length) % headers.length;
-    if (e.key === "Home") newIndex = 0;
-    if (e.key === "End") newIndex = headers.length - 1;
-
-    if (newIndex !== currentIndex) {
-      e.preventDefault();
-      headers[newIndex]?.focus();
-    }
-
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      toggleIndex(index);
-    }
-  };
-
   return (
     <details className={`accordion-header ${className}`}>
       <summary
@@ -124,8 +97,7 @@ const AccordionHeader: React.FC<AccordionHeaderProps> = ({
         aria-expanded={isOpen}
         aria-controls={panelId}
         onClick={() => toggleIndex(index)}
-        onKeyDown={handleKeyDown}
-        data-accordion-header
+        // data-accordion-header
         className={styles.header}
         // className="w-full text-left"
         //type="button"
