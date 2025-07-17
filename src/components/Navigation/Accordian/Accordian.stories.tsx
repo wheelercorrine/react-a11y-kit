@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import "../index.css";
-
-import { Accordion } from "../components/Navigation/Accordian/Accordian";
+import "../../../index.css";
+import { Accordion } from "./Accordian";
 
 //I need to adjust this so that headers and panels can be easily adjusted/ played with?
 

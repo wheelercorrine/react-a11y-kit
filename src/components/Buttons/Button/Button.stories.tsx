@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import "../index.css";
-
-import { Button } from "../components/Buttons/Button/Button";
+import "../../../index.css";
+import { Button } from "./Button";
 
 type ButtonPropsAndCustomArgs = React.ComponentProps<typeof Button> & {
   text?: string;
@@ -38,6 +37,6 @@ export const Destructive: Story = {
   args: { variant: "destructive", text: "Delete Profile" },
 };
 
-export const disabled: Story = {
+export const Disabled: Story = {
   args: { variant: "disabled", text: "Submit" },
 };

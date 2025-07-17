@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import "../index.css";
+import "../../../index.css";
 
-import { Combobox } from "../components/Pickers/Combobox/Combobox";
+import { Combobox } from "./Combobox";
 
 // type ComboboxPropsAndCustomArgs = React.ComponentProps<typeof Combobox> & {
 //   items: string[];

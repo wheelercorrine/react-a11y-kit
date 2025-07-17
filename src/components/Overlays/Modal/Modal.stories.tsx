@@ -1,8 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import "../index.css";
-
-import { Modal } from "../components/Overlays/Modal/Modal";
-import { Button } from "../components/Buttons/Button/Button";
+import "../../../index.css";
+import { Modal } from "./Modal";
+import { Button } from "../../Buttons/Button/Button";
 
 // type ButtonPropsAndCustomArgs = React.ComponentProps<typeof Button> & {
 //   text?: string;

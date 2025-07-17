@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import "../index.css";
-
-import { Tabs } from "../components/Navigation/Tabs/Tabs";
+import "../../../index.css";
+import { Tabs } from "./Tabs";
 
 // type ButtonPropsAndCustomArgs = React.ComponentProps<typeof Button> & {
 //   text?: string;
