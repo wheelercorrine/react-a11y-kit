@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { fn } from "storybook/test";
 import "../../../index.css";
 import { Button } from "./Button";
 
@@ -18,6 +19,9 @@ const meta = {
       control: "select",
       options: ["text", "icon"],
     },
+  },
+  args: {
+    onClick: fn(),
   },
   parameters: {
     layout: "centered",

@@ -5,11 +5,11 @@ interface BaseButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   ref?: RefObject<HTMLButtonElement | null>;
   variant?: "primary" | "secondary" | "destructive";
-  disabled: boolean;
+  disabled?: boolean;
   className?: string;
   onClick: () => void;
-  isLoading: boolean;
-  loadingText: string;
+  isLoading?: boolean;
+  loadingText?: string;
 }
 
 type TextButton = BaseButtonProps & {
